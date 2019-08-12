@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { splitText } from '../utils';
+import Line from './Line';
 import data from '../data';
 
 const App = () => {
   const [nodeIndex, setNodeIndex] = useState(1);
-  const node = data[nodeIndex];
+  const node = data.find(n => n.id === nodeIndex);
   const lines = splitText(node.text);
-  console.log('lines', lines);
 
   return (
-    <div>Hello, World!</div>
+    <section>
+      {lines.map((text, i) => <Line key={i} text={text} />)}
+    </section>
   );
 };
 
