@@ -7,6 +7,8 @@ import paper from '../cream-paper.png';
 import data from '../data';
 
 const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css?family=Alegreya&display=swap');
+
   body {
     background-color: #f5efc9;
     background-image: url(${paper});
