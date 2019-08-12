@@ -26,4 +26,7 @@ const chunk = (arr, len) => {
  * @param {number} len  OPTIONAL: the number of words for each line.
  * @return {array}      An array of lines.
  */
-export const splitText = (text, len = 5) => chunk(text.split(' '), len);
+export const splitText = (text, len = 5) => {
+  return chunk(text.split(' '), len)
+    .map(line => line.join(' '));
+};
