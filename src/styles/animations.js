@@ -13,3 +13,12 @@ export const slideUp = keyframes`
     opacity: 0.8;
   }
 `;
+
+export const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+`;

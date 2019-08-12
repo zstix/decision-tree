@@ -3,6 +3,7 @@ import { splitText } from '../utils';
 
 import GlobalStyle from '../styles/global';
 import Line from './Line';
+import Button from './Button';
 import data from '../data';
 
 const DELAY = 200; // delay between showing the next line
@@ -18,6 +19,11 @@ const App = () => {
       <section>
         {lines.map((text, i) => (
           <Line key={i} delay={i * DELAY} text={text} />
+        ))}
+      </section>
+      <section>
+        {node.options.map((option, i) => (
+          <Button key={i} delay={lines.length * DELAY} {...option} />
         ))}
       </section>
     </>
