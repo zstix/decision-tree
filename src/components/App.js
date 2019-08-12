@@ -3,8 +3,9 @@ import { splitText } from '../utils';
 
 import GlobalStyle from '../styles/global';
 import Line from './Line';
-import paper from '../cream-paper.png';
 import data from '../data';
+
+const DELAY = 200; // delay between showing the next line
 
 const App = () => {
   const [nodeIndex, setNodeIndex] = useState(1);
@@ -15,7 +16,9 @@ const App = () => {
     <>
       <GlobalStyle />
       <section>
-        {lines.map((text, i) => <Line key={i} text={text} />)}
+        {lines.map((text, i) => (
+          <Line key={i} delay={i * DELAY} text={text} />
+        ))}
       </section>
     </>
   );

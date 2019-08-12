@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -16,12 +16,24 @@ const Wrapper = styled.p`
   animation: 0.8s ${slideUp} ease-in-out;
 `;
 
-const Line = ({ text }) => (
-  <Wrapper>{text}</Wrapper>
-);
+const Line = ({ delay, text }) => {
+  const [displayText, setDisplayText] = useState(false);
+
+  useEffect(() => {
+    const pause = setTimeout(() => {
+      setDisplayText(text);
+    }, delay);
+    return () => clearTimeout(pause);
+  }, [delay, text]);
+
+  return displayText && (
+    <Wrapper>{text}</Wrapper>
+  );
+}
 
 Line.propTypes = {
-  text: PropTypes.string
+  delay: PropTypes.number.isRequired,
+  text: PropTypes.string.isRequired
 };
 
 export default Line;
