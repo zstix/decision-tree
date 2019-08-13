@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import { useDelay } from '../hooks';
 import { fadeIn } from '../styles/animations';
 
 const Wrapper = styled.button`
@@ -20,9 +21,17 @@ const Wrapper = styled.button`
   animation: 0.8s ${fadeIn} ease-in-out;
 `;
 
-const Button = ({ text }) => (
-  <Wrapper>{text}</Wrapper>
-);
+const Button = ({ delay, text }) => {
+  const [show, setShow] = useState(false);
+
+  useDelay(() => {
+    setShow(true);
+  }, delay);
+
+  return show && (
+    <Wrapper>{text}</Wrapper>
+  );
+};
 
 Button.propTypes = {
   delay: PropTypes.number.isRequired,

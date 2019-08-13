@@ -23,7 +23,11 @@ const App = () => {
       </section>
       <section>
         {node.options.map((option, i) => (
-          <Button key={i} delay={lines.length * DELAY} {...option} />
+          <Button
+            key={i}
+            delay={(lines.length + 1) * DELAY}
+            {...option}
+          />
         ))}
       </section>
     </>

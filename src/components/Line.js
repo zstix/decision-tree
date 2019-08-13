@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import { useDelay } from '../hooks';
 import { slideUp } from '../styles/animations';
 
 const Wrapper = styled.p`
@@ -17,16 +18,13 @@ const Wrapper = styled.p`
 `;
 
 const Line = ({ delay, text }) => {
-  const [displayText, setDisplayText] = useState(false);
+  const [show, setShow] = useState(false);
 
-  useEffect(() => {
-    const pause = setTimeout(() => {
-      setDisplayText(text);
-    }, delay);
-    return () => clearTimeout(pause);
-  }, [delay, text]);
+  useDelay(() => {
+    setShow(true);
+  }, delay);
 
-  return displayText && (
+  return show && (
     <Wrapper>{text}</Wrapper>
   );
 }
