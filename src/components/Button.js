@@ -21,13 +21,13 @@ const Wrapper = styled.button`
   animation: 0.8s ${fadeIn} ease-in-out;
 `;
 
-const Button = ({ text }) => (
-  <Wrapper>{text}</Wrapper>
+const Button = ({ handleClick, text }) => (
+  <Wrapper onClick={handleClick}>{text}</Wrapper>
 );
 
 Button.propTypes = {
-  text: PropTypes.string.isRequired,
-  value: PropTypes.number.isRequired,
+  handleClick: PropTypes.func.isRequired,
+  text: PropTypes.string.isRequired
 };
 
 export default withDelay(Button);

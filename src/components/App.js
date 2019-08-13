@@ -18,15 +18,20 @@ const App = () => {
       <GlobalStyle />
       <section>
         {lines.map((text, i) => (
-          <Line key={i} delay={i * DELAY} text={text} />
+          <Line
+            key={`line:${nodeIndex}:${i}`}
+            delay={i * DELAY}
+            text={text}
+          />
         ))}
       </section>
       <section>
         {node.options.map((option, i) => (
           <Button
-            key={i}
+            key={`button:${nodeIndex}:${i}`}
             delay={(lines.length + 1) * DELAY}
-            {...option}
+            text={option.text}
+            handleClick={() => setNodeIndex(option.value)}
           />
         ))}
       </section>
