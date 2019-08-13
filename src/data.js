@@ -27,21 +27,33 @@ export default [
   {
     id: 4,
     text: 'Check out the sink',
-    value: 'location'
+    value: 'location',
+    options: [
+      { text: 'do over', value: 1 }
+    ]
   },
   {
     id: 5,
     text: 'The med has great tapas!',
-    value: 'location'
+    value: 'location',
+    options: [
+      { text: 'do over', value: 1 }
+    ]
   },
   {
     id: 6,
     text: 'license no. 1 will make you a fancy cocktail',
-    value: 'location'
+    value: 'location',
+    options: [
+      { text: 'do over', value: 1 }
+    ]
   },
   {
     id: 7,
     text: 'grab a pint (or stein) at the beir garden',
-    value: 'location'
+    value: 'location',
+    options: [
+      { text: 'do over', value: 1 }
+    ]
   }
 ];
