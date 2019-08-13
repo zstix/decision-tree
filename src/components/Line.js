@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { useDelay } from '../hooks';
+import withDelay from './withDelay';
 import { slideUp } from '../styles/animations';
 
 const Wrapper = styled.p`
@@ -17,21 +17,12 @@ const Wrapper = styled.p`
   animation: 0.8s ${slideUp} ease-in-out;
 `;
 
-const Line = ({ delay, text }) => {
-  const [show, setShow] = useState(false);
-
-  useDelay(() => {
-    setShow(true);
-  }, delay);
-
-  return show && (
-    <Wrapper>{text}</Wrapper>
-  );
-}
+const Line = ({ text }) => (
+  <Wrapper>{text}</Wrapper>
+);
 
 Line.propTypes = {
-  delay: PropTypes.number.isRequired,
   text: PropTypes.string.isRequired
 };
 
-export default Line;
+export default withDelay(Line);
