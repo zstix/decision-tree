@@ -7,7 +7,6 @@ export default createGlobalStyle`
   body {
     background-color: #f5efc9;
     background-image: url(${paper});
-    padding-top: 2em;
-    text-align: center;
+    padding: 2em;
   }
 `;

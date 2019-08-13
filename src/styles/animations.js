@@ -2,14 +2,14 @@ import { keyframes } from 'styled-components';
 
 export const slideUp = keyframes`
   0% {
-    clip-path: inset(100% 0 50% 0);
+    top: 100%;
     opacity: 0;
   }
   50% {
-    opacity: 0.2;
+    opacity: 0;
   }
   100% {
-    clip-path: inset(0);
+    top: 0;
     opacity: 0.8;
   }
 `;

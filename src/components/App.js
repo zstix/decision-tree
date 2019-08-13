@@ -6,7 +6,7 @@ import Line from './Line';
 import Button from './Button';
 import data from '../data';
 
-const DELAY = 200; // delay between showing the next line
+const DELAY = 300; // delay between showing the next line
 
 const App = () => {
   const [nodeIndex, setNodeIndex] = useState(1);

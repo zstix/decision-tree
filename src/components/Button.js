@@ -13,7 +13,7 @@ const Wrapper = styled.button`
   cursor: pointer;
   font-family: 'Alegreya', serif;
   font-size: 2em;
-  margin: 1em 0.5em;
+  margin: 2em 0.5em;
   opacity: 0.8;
   outline: none;
   padding: 0 1em;
